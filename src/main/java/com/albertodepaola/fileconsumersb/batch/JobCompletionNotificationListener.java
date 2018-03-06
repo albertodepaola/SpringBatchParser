@@ -33,13 +33,12 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
 		if(jobExecution.getStatus() == BatchStatus.COMPLETED) {
 			log.info("!!! JOB FINISHED! Time to verify the results");
 
-			List<LogLine> results = jdbcTemplate.query("SELECT type, sellerName, clientName, saleItems FROM logline", new RowMapper<LogLine>() {
+			List<LogLine> results = jdbcTemplate.query("SELECT type, clientName FROM client", new RowMapper<LogLine>() {
 				@Override
 				public LogLine mapRow(ResultSet rs, int row) throws SQLException {
 					LogLine logLine = new LogLine(rs.getString(1));
-					logLine.setSellerName(rs.getString("sellerName"));
-					logLine.setClientName(rs.getString("clientName"));
-					logLine.setSaleItems(rs.getString("saleItems"));
+					logLine.setSellerName(rs.getString("clientName"));
+					
 					return logLine;
 				}
 			});

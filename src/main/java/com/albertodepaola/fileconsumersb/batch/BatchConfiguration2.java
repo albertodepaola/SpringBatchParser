@@ -28,8 +28,7 @@ import com.albertodepaola.fileconsumersb.model.LogLine;
 import com.albertodepaola.fileconsumersb.model.LogLineItemProcessor;
 import com.albertodepaola.fileconsumersb.model.SellerLineItemProcessor;
 
-@Configuration
-@EnableBatchProcessing
+
 public class BatchConfiguration2 {
 
 	@Autowired
@@ -73,7 +72,7 @@ public class BatchConfiguration2 {
 			LogLine sellerLine = new LogLine();
 			
 			sellerLine.setType(fieldSet.readString(0));
-			sellerLine.setSaleId(Long.getLong(fieldSet.readString(1)));
+			sellerLine.setSaleId(fieldSet.readString(1));
 			sellerLine.setSaleItems(fieldSet.readString(2));
 			sellerLine.setSellerName(fieldSet.readString(3));
 			

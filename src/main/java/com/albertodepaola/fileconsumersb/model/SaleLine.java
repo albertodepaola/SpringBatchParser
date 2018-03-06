@@ -1,27 +1,36 @@
 package com.albertodepaola.fileconsumersb.model;
 
-public class SalesLine extends LogLine {
+public class SaleLine extends LogLine {
 
-	private Long saleId;
+	private Long sale_id;
+	private String saleId;
 	private String saleItems;
 	private String sellerName;
 
-	public SalesLine() {
+	public SaleLine() {
 		super();
 	}
 
-	public SalesLine(String type, Long saleId, String saleItems, String sellerName) {
+	public SaleLine(String type, String saleId, String saleItems, String sellerName) {
 		super(type);
 		this.saleId = saleId;
 		this.saleItems = saleItems;
 		this.sellerName = sellerName;
 	}
 
-	public Long getSaleId() {
+	public Long getSale_id() {
+		return sale_id;
+	}
+
+	public void setSale_id(Long sale_id) {
+		this.sale_id = sale_id;
+	}
+
+	public String getSaleId() {
 		return saleId;
 	}
 
-	public void setSaleId(Long saleId) {
+	public void setSaleId(String saleId) {
 		this.saleId = saleId;
 	}
 

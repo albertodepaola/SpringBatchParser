@@ -1,5 +1,9 @@
 package com.albertodepaola.fileconsumersb.model;
 
+import java.math.BigDecimal;
+import java.util.List;
+
+
 public class LogLine {
 
 	private String type;
@@ -11,10 +15,12 @@ public class LogLine {
 	private String clientName;
 	private String businessType;
 	
-	private Long saleId;
+	private String saleId;
 	private String saleItems;
 	private String saleSellerName;
 	
+	private BigDecimal saleAmount;
+	private List<SaleDetail> saleDetails;
 
 	public LogLine() {
 
@@ -80,11 +86,11 @@ public class LogLine {
 		this.businessType = businessType;
 	}
 
-	public Long getSaleId() {
+	public String getSaleId() {
 		return saleId;
 	}
 
-	public void setSaleId(Long saleId) {
+	public void setSaleId(String saleId) {
 		this.saleId = saleId;
 	}
 
@@ -102,6 +108,22 @@ public class LogLine {
 
 	public void setSaleSellerName(String saleSellerName) {
 		this.saleSellerName = saleSellerName;
+	}
+
+	public BigDecimal getSaleAmount() {
+		return saleAmount;
+	}
+
+	public void setSaleAmount(BigDecimal saleAmount) {
+		this.saleAmount = saleAmount;
+	}
+
+	public List<SaleDetail> getSaleDetails() {
+		return saleDetails;
+	}
+
+	public void setSaleDetails(List<SaleDetail> saleDetails) {
+		this.saleDetails = saleDetails;
 	}
 
 	@Override
